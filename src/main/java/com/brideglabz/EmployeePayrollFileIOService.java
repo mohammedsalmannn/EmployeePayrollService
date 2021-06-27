@@ -28,4 +28,13 @@ public class EmployeePayrollFileIOService {
         }
         return entries;
     }
+
+    public void printDataFromFile() {
+        try {
+            Files.lines(new File(PAYROLL_FILE_NAME).toPath()).forEach(System.out::println);
+            System.out.println("No of Entries of Employees Pay in the File : " + countEntries());
+        } catch (IOException exception) {
+            exception.printStackTrace();
+        }
+    }
 }

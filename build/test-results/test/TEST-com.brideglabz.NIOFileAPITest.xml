@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.brideglabz.NIOFileAPITest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-06-27T11:32:42" hostname="DESKTOP-T79M02P" time="0.188">
+  <properties/>
+  <testcase name="numberOfEmployeeEntryTest" classname="com.brideglabz.NIOFileAPITest" time="0.188"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

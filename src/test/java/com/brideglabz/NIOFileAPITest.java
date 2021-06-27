@@ -9,17 +9,17 @@ import java.util.Arrays;
 import java.util.stream.IntStream;
 
 public class NIOFileAPITest {
-    private static String HOME = System.getProperty("C:\\Users\\Durga Prasath\\IdeaProjects\\FilesCreated");
+    private static String HOME = System.getProperty("C:\\Users\\SalmaN\\IdeaProjects\\FilesCreated");
     private static String PLAY_WITH_NIO = "TempPlayGround";
 
     @Test
     public void givenPath_WhenChecked_ThenConfirm() throws IOException {
         //Check File Exists
-        Path homePath = Paths.get("C:\\Users\\Durga Prasath\\IdeaProjects\\FilesCreated");
+        Path homePath = Paths.get("C:\\Users\\SalmaN\\IdeaProjects\\FilesCreated");
         Assert.assertTrue(Files.exists(homePath));
 
         //Delete file and Check File Not Exist
-        Path playPath = Paths.get("C:\\Users\\Durga Prasath\\IdeaProjects\\FilesCreated\\PLAY_WITH_NIO");
+        Path playPath = Paths.get("C:\\Users\\SalmaN\\IdeaProjects\\FilesCreated\\PLAY_WITH_NIO");
         if (Files.exists(playPath)) FileUtils.deleteFiles(playPath.toFile());
         Assert.assertTrue(Files.notExists(playPath));
 
