@@ -1,6 +1,7 @@
-package com.brideglabz;import org.junit.Assert;
-import org.junit.Test;
+package com.brideglabz;
 
+import org.junit.Assert;
+import org.junit.Test;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -9,17 +10,17 @@ import java.util.Arrays;
 import java.util.stream.IntStream;
 
 public class NIOFileAPITest {
-    private static String HOME = System.getProperty("C:\\Users\\SalmaN\\IdeaProjects\\FilesCreated");
+    private static String HOME = System.getProperty("C:\\Users\\Durga Prasath\\IdeaProjects\\FilesCreated");
     private static String PLAY_WITH_NIO = "TempPlayGround";
 
     @Test
     public void givenPath_WhenChecked_ThenConfirm() throws IOException {
         //Check File Exists
-        Path homePath = Paths.get("C:\\Users\\SalmaN\\IdeaProjects\\FilesCreated");
+        Path homePath = Paths.get("C:\\Users\\Durga Prasath\\IdeaProjects\\FilesCreated");
         Assert.assertTrue(Files.exists(homePath));
 
         //Delete file and Check File Not Exist
-        Path playPath = Paths.get("C:\\Users\\SalmaN\\IdeaProjects\\FilesCreated\\PLAY_WITH_NIO");
+        Path playPath = Paths.get("C:\\Users\\Durga Prasath\\IdeaProjects\\FilesCreated\\PLAY_WITH_NIO");
         if (Files.exists(playPath)) FileUtils.deleteFiles(playPath.toFile());
         Assert.assertTrue(Files.notExists(playPath));
 
@@ -54,6 +55,15 @@ public class NIOFileAPITest {
         };
         EmployeePayrollService employeePayrollService = new EmployeePayrollService(Arrays.asList(empArray));
         employeePayrollService.writeEmployeeData(EmployeePayrollService.IOService.FILE_IO);
+        employeePayrollService.printData(EmployeePayrollService.IOService.FILE_IO);
+        long entries = employeePayrollService.countEntries(EmployeePayrollService.IOService.FILE_IO);
+        Assert.assertEquals(3, entries);
+    }
+
+    @Test
+    public void givenFile_onReadingFromFile_shouldMatchEmployeeCount() {
+        EmployeePayrollService employeePayrollService = new EmployeePayrollService();
+        employeePayrollService.readDataFromFile(EmployeePayrollService.IOService.FILE_IO);
         long entries = employeePayrollService.countEntries(EmployeePayrollService.IOService.FILE_IO);
         Assert.assertEquals(3, entries);
     }
