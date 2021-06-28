@@ -1,0 +1,1 @@
+’Connecting to database:jdbc:mysql://localhost:3306/payroll_service?useSSL=falseConnection is successful!!!!com.mysql.cj.jdbc.ConnectionImpl@a90576
