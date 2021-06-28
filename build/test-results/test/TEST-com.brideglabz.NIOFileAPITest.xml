@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.brideglabz.NIOFileAPITest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-06-28T04:24:20" hostname="DESKTOP-T79M02P" time="1.28">
+<testsuite name="com.brideglabz.NIOFileAPITest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-06-28T05:20:27" hostname="DESKTOP-T79M02P" time="0.611">
   <properties/>
-  <testcase name="givenEmployeePayrollInDB_WhenRetrieved_ShouldMatchEmployeeCount" classname="com.brideglabz.NIOFileAPITest" time="1.28"/>
-  <system-out><![CDATA[Connecting to database:jdbc:mysql://localhost:3306/payroll_service?useSSL=falseConnection is successful!!!!com.mysql.cj.jdbc.ConnectionImpl@a90576]]></system-out>
+  <testcase name="givenDataRange_WhenRetrieved_ShouldMatchEmployeeCount" classname="com.brideglabz.NIOFileAPITest" time="0.611"/>
+  <system-out><![CDATA[Connecting to database:jdbc:mysql://localhost:3306/payroll_service?useSSL=falseConnection is successful!!!!com.mysql.cj.jdbc.ConnectionImpl@a90576Connecting to database:jdbc:mysql://localhost:3306/payroll_service?useSSL=falseConnection is successful!!!!com.mysql.cj.jdbc.ConnectionImpl@1898524]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
