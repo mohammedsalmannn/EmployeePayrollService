@@ -9,6 +9,7 @@ import java.nio.file.Path;
 import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.IntStream;
 
 public class NIOFileAPITest {
@@ -115,4 +116,15 @@ public class NIOFileAPITest {
         List<EmployeePayrollData> employeePayrollData = employeePayrollService.readEmployeePayrollDataRange(EmployeePayrollService.IOService.DB_IO,startDate,endDate);
         Assert.assertEquals(3,employeePayrollData.size());
     }
+
+    @Test
+    public void givenPayrollData_WhenAverageSalaryRetrievedByGender_ShouldReturnProperValue() {
+        EmployeePayrollService employeePayrollService = new EmployeePayrollService();
+        employeePayrollService.readEmployeePayrollData(EmployeePayrollService.IOService.DB_IO);
+        Map<String,Double> averageSalaryByGender = employeePayrollService.readAverageSalaryByGender(EmployeePayrollService.IOService.DB_IO);
+        Assert.assertTrue(averageSalaryByGender.get("M").equals(2500000.00)
+                && averageSalaryByGender.get("F").equals(3000000.00));
+    }
+
+
 }

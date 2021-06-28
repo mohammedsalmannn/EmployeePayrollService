@@ -1,12 +1,13 @@
 package com.brideglabz;
 
-
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 public class EmployeePayrollService {
+
     public enum IOService {
         CONSOLE_IO, FILE_IO, DB_IO, REST_IO
     }
@@ -46,6 +47,18 @@ public class EmployeePayrollService {
         if(ioService.equals(IOService.DB_IO))
             this.employeePayrollList = employeePayrollDBService.readData();
         return this.employeePayrollList;
+    }
+
+    public List<EmployeePayrollData> readEmployeePayrollDataRange(IOService ioService, LocalDate startDate, LocalDate endDate) {
+        if(ioService.equals(IOService.DB_IO))
+            return employeePayrollDBService.getEmployeePayrollForDataRange(startDate,endDate);
+        return null;
+    }
+
+    public Map<String, Double> readAverageSalaryByGender(IOService ioService) {
+        if(ioService.equals(IOService.DB_IO))
+            return employeePayrollDBService.getAverageSalaryByGender();
+        return null;
     }
 
     public boolean checkEmployeePayrollInSyncWithDB(String name) {
@@ -93,11 +106,5 @@ public class EmployeePayrollService {
         if(ioService.equals(IOService.CONSOLE_IO)){
             new EmployeePayrollFileIOService().readDataFromFile();
         }
-    }
-
-    public List<EmployeePayrollData> readEmployeePayrollDataRange(IOService ioService, LocalDate startDate, LocalDate endDate) {
-        if(ioService.equals(IOService.DB_IO))
-            return employeePayrollDBService.getEmployeePayrollForDataRange(startDate,endDate);
-        return null;
     }
 }
