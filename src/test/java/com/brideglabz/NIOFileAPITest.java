@@ -95,4 +95,12 @@ public class NIOFileAPITest {
         Assert.assertEquals(3,employeePayrollData.size());
     }
 
+    @Test
+    public void givenNewSalaryForEmployee_WhenUpdated_ShouldMatch() {
+        EmployeePayrollService employeePayrollService = new EmployeePayrollService();
+        List<EmployeePayrollData> employeePayrollData = employeePayrollService.readEmployeePayrollData(EmployeePayrollService.IOService.DB_IO);
+        employeePayrollService.updateEmployeeSalary("Bill",3000000.00);
+        boolean result = employeePayrollService.checkEmployeePayrollInSyncWithDB("Bill");
+        Assert.assertTrue(result);
+    }
 }
